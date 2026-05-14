@@ -176,7 +176,7 @@
   </section>
 
   <!-- ═══════════════════════════════════════
-       SHOWCASE
+       SHOWCASE (unified)
   ═══════════════════════════════════════ -->
   <section class="showcase" id="showcase">
     <div class="showcase__header reveal">
@@ -184,33 +184,35 @@
       <h2 class="section-title">Ergebnisse,<br /><em>die überzeugen.</em></h2>
     </div>
 
-    <div class="showcase__grid">
-      <div class="showcase__item showcase__item--large reveal">
-        <div class="showcase__img-wrap">
-          <img src="lamborghini.png" alt="Lamborghini Detailing" loading="lazy" />
-          <div class="showcase__overlay">
-            <span class="showcase__label">Lackkorrektur &amp; Keramikversiegelung</span>
-          </div>
-        </div>
+    <!-- Reihe 1: 1 großes Highlight + 2 gleichhohe Bilder -->
+    <div class="sc-grid sc-grid--top">
+      <div class="sc-item sc-item--hero reveal">
+        <img src="lamborghini.png" alt="Lamborghini — Lackkorrektur &amp; Keramikversiegelung" loading="lazy" style="object-position: center center;" />
+        <div class="sc-item__label">Lackkorrektur &amp; Keramikversiegelung</div>
       </div>
-      <div class="showcase__item reveal">
-        <div class="showcase__img-wrap">
-          <img src="mercedes.png" alt="Mercedes Aufbereitung" loading="lazy" />
-          <div class="showcase__overlay">
-            <span class="showcase__label">Premium Detailing</span>
-          </div>
-        </div>
+      <div class="sc-item reveal">
+        <img src="mercedes.png" alt="Mercedes — Premium Detailing" loading="lazy" style="object-position: center center;" />
+        <div class="sc-item__label">Premium Detailing</div>
       </div>
-      <div class="showcase__item reveal">
-        <div class="showcase__img-wrap">
-          <img src="vw.png" alt="VW Fahrzeugpflege" loading="lazy" />
-          <div class="showcase__overlay">
-            <span class="showcase__label">Vollaufbereitung</span>
-          </div>
-        </div>
+      <div class="sc-item reveal">
+        <img src="bmwdrei.png" alt="BMW 3er — Vollaufbereitung" loading="lazy" style="object-position: center center;" />
+        <div class="sc-item__label">Vollaufbereitung</div>
       </div>
     </div>
 
+    <!-- Reihe 2: 2 gleichbreite Bilder -->
+    <div class="sc-grid sc-grid--bottom">
+      <div class="sc-item reveal">
+        <img src="vw.png" alt="VW — Fahrzeugpflege" loading="lazy" style="object-position: center center;" />
+        <div class="sc-item__label">Fahrzeugpflege</div>
+      </div>
+      <div class="sc-item reveal">
+        <img src="lederauto.png" alt="Leder-Innenraum — Innenreinigung" loading="lazy" style="object-position: center 30%;" />
+        <div class="sc-item__label">Premium Innenreinigung</div>
+      </div>
+    </div>
+
+    <!-- Statistiken -->
     <div class="showcase__stats reveal">
       <div class="stat">
         <span class="stat__num">500<sup>+</sup></span>
@@ -329,33 +331,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════
-       GALERIE
-  ═══════════════════════════════════════ -->
-  <section class="gallery" id="galerie">
-    <div class="gallery__header reveal">
-      <p class="section-eyebrow">Galerie</p>
-      <h2 class="section-title">Jedes Fahrzeug.<br /><em>Perfekt aufbereitet.</em></h2>
-    </div>
-    <div class="gallery__strip">
-      <div class="gallery__item reveal">
-        <img src="mercedes.png" alt="Mercedes" loading="lazy" />
-      </div>
-      <div class="gallery__item reveal">
-        <img src="lamborghini.png" alt="Lamborghini" loading="lazy" />
-      </div>
-      <div class="gallery__item reveal">
-        <img src="vw.png" alt="VW" loading="lazy" />
-      </div>
-      <div class="gallery__item reveal">
-        <img src="bmwdrei.png" alt="BMW 3er" loading="lazy" />
-      </div>
-      <div class="gallery__item reveal">
-        <img src="lederauto.png" alt="Leder-Innenraum Detailing" loading="lazy" />
       </div>
     </div>
   </section>

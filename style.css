@@ -507,7 +507,7 @@ input, textarea, select { font-family: inherit; }
 }
 
 /* ═══════════════════════════════════════════════════
-   SHOWCASE
+   SHOWCASE (unified)
 ═══════════════════════════════════════════════════ */
 .showcase {
   padding: 120px 0 80px;
@@ -516,74 +516,102 @@ input, textarea, select { font-family: inherit; }
 
 .showcase__header {
   max-width: 1240px;
-  margin: 0 auto 64px;
+  margin: 0 auto 56px;
   padding: 0 40px;
 }
 
-.showcase__grid {
+/* ── Shared grid wrapper ── */
+.sc-grid {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 40px;
   display: grid;
-  grid-template-columns: 1.6fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 16px;
+  gap: 14px;
 }
 
-.showcase__item--large {
-  grid-row: 1 / 3;
+/* Reihe 1: Highlight links (doppelte Höhe) + 2 Bilder rechts gestapelt */
+.sc-grid--top {
+  grid-template-columns: 1.45fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  /* Gesamthöhe der rechten Spalte = 2 × Bildhöhe + gap */
+}
+.sc-grid--top .sc-item:first-child {
+  grid-row: 1 / 3;          /* Hero-Bild: volle Höhe beider Reihen */
 }
 
-.showcase__img-wrap {
+/* Reihe 2: 2 gleichbreite Bilder */
+.sc-grid--bottom {
+  grid-template-columns: 1fr 1fr;
+  margin-top: 14px;
+}
+
+/* ── Einzelnes Bild-Element ── */
+.sc-item {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-card);
   background: var(--dark-2);
-  aspect-ratio: 4/3;
-}
-.showcase__item--large .showcase__img-wrap {
-  aspect-ratio: 3/4;
-  height: 100%;
+  /* Standardhöhe für Reihe 1 rechts und Reihe 2 */
+  height: 300px;
 }
 
-.showcase__img-wrap img {
+/* Hero-Bild: höher, weil es 2 Reihen spannt */
+.sc-grid--top .sc-item:first-child {
+  height: auto; /* wird durch grid-row gesteuert */
+  min-height: 614px; /* 2 × 300px + 14px gap */
+}
+
+/* Reihe 2-Bilder etwas niediger – breites Panorama-Format */
+.sc-grid--bottom .sc-item {
+  height: 340px;
+}
+
+.sc-item img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  object-position: center center; /* inline override per Bild möglich */
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              filter 0.7s ease;
+  filter: brightness(0.88);
 }
-.showcase__item:hover img {
+.sc-item:hover img {
   transform: scale(1.04);
+  filter: brightness(1);
 }
 
-.showcase__overlay {
+/* Label am unteren Rand, erscheint beim Hover */
+.sc-item__label {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
-  display: flex;
-  align-items: flex-end;
-  padding: 24px;
-  opacity: 0;
-  transition: opacity var(--transition);
-}
-.showcase__item:hover .showcase__overlay { opacity: 1; }
-
-.showcase__label {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 22px;
+  background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%);
   font-family: var(--font-condensed);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--white);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.sc-item:hover .sc-item__label {
+  opacity: 1;
+  transform: translateY(0);
 }
 
+/* Statistiken */
 .showcase__stats {
   max-width: 1240px;
-  margin: 80px auto 0;
+  margin: 56px auto 0;
   padding: 0 40px;
   display: flex;
   align-items: center;
-  gap: 0;
   border: 1px solid var(--border);
   border-radius: var(--radius-card);
   overflow: hidden;
@@ -627,6 +655,7 @@ input, textarea, select { font-family: inherit; }
   background: var(--border);
   flex-shrink: 0;
 }
+
 
 /* ═══════════════════════════════════════════════════
    WHY
@@ -776,59 +805,6 @@ input, textarea, select { font-family: inherit; }
   font-size: 12px;
   color: var(--muted);
   margin-top: 2px;
-}
-
-/* ═══════════════════════════════════════════════════
-   GALLERY
-═══════════════════════════════════════════════════ */
-.gallery {
-  padding: 120px 0;
-  background: var(--dark);
-  overflow: hidden;
-}
-
-.gallery__header {
-  max-width: 1240px;
-  margin: 0 auto 64px;
-  padding: 0 40px;
-}
-
-.gallery__strip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto auto;
-  gap: 16px;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-
-/* 4. + 5. Bild: breiter, damit 2 Bilder die zweite Reihe füllen */
-.gallery__item:nth-child(4),
-.gallery__item:nth-child(5) {
-  grid-column: span 1;
-}
-/* Zweite Reihe 2-spaltiger Trick: 4. bekommt 1.5fr-Anteil visuell
-   über ein 2-col-Wrapper — wir lösen das clean per auto-placement */
-.gallery__item:nth-child(4) { grid-column: 1 / 2; }
-.gallery__item:nth-child(5) { grid-column: 2 / 4; }
-
-.gallery__item {
-  overflow: hidden;
-  border-radius: var(--radius-card);
-  aspect-ratio: 4/3;
-  background: var(--anthracite);
-}
-.gallery__item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  filter: brightness(0.9);
-}
-.gallery__item:hover img {
-  transform: scale(1.06);
-  filter: brightness(1);
 }
 
 /* ═══════════════════════════════════════════════════
@@ -1093,16 +1069,12 @@ input, textarea, select { font-family: inherit; }
   .services__grid { grid-template-columns: repeat(2, 1fr); }
   .reviews__grid { grid-template-columns: 1fr 1fr; }
 
-  .showcase__grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-  }
-  .showcase__item--large { grid-row: auto; }
-  .showcase__img-wrap,
-  .showcase__item--large .showcase__img-wrap {
-    aspect-ratio: 4/3;
-    height: auto;
-  }
+  /* Showcase Tablet */
+  .sc-grid { padding: 0 28px; }
+  .sc-grid--top { grid-template-columns: 1fr 1fr; }
+  .sc-grid--top .sc-item:first-child { min-height: 280px; }
+  .sc-item { height: 260px; }
+  .sc-grid--bottom .sc-item { height: 280px; }
 
   .stat { padding: 36px 24px; }
   .stat__num { font-size: 40px; }
@@ -1128,10 +1100,14 @@ input, textarea, select { font-family: inherit; }
 
   .showcase { padding: 80px 0 60px; }
   .showcase__header { padding: 0 20px; }
-  .showcase__grid {
-    grid-template-columns: 1fr;
-    padding: 0 20px;
-  }
+  /* Showcase Mobile: alles einspaltig */
+  .sc-grid { padding: 0 20px; gap: 10px; }
+  .sc-grid--top { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .sc-grid--top .sc-item:first-child { grid-row: auto; min-height: 0; height: 260px; }
+  .sc-item { height: 220px; }
+  .sc-grid--bottom { grid-template-columns: 1fr; margin-top: 10px; }
+  .sc-grid--bottom .sc-item { height: 220px; }
+  .sc-item__label { opacity: 1; transform: none; } /* Labels mobil immer sichtbar */
   .showcase__stats {
     flex-direction: column;
     padding: 0 20px;
@@ -1149,13 +1125,6 @@ input, textarea, select { font-family: inherit; }
   .reviews { padding: 80px 0; }
   .reviews__grid { grid-template-columns: 1fr; }
 
-  .gallery { padding: 80px 0; }
-  .gallery__header { padding: 0 20px; }
-  .gallery__strip {
-    grid-template-columns: 1fr;
-    padding: 0 20px;
-  }
-
   .contact { padding: 80px 0; }
   .contact__inner { grid-template-columns: 1fr; gap: 48px; }
   .contact__body { max-width: 100%; }
@@ -1167,12 +1136,6 @@ input, textarea, select { font-family: inherit; }
   .footer__bottom { flex-direction: column; gap: 16px; text-align: center; }
 
   .section-header { margin-bottom: 48px; }
-
-  .gallery__strip { gap: 12px; }
-  /* Mobile: alle 5 Galeriebilder einspaltig */
-  .gallery__item:nth-child(4),
-  .gallery__item:nth-child(5) { grid-column: 1 / -1; }
-  .showcase__grid { gap: 12px; }
 
   /* Legal Sections mobile */
   .legal-section__inner { grid-template-columns: 1fr; gap: 32px; }
