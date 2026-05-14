@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APEX DETAIL STUDIO — Premium Fahrzeugaufbereitung</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">
+        <span class="nav__logo-mark">APEX</span>
+        <span class="nav__logo-sub">DETAIL STUDIO</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="#leistungen">Leistungen</a></li>
+        <li><a href="#showcase">Arbeiten</a></li>
+        <li><a href="#ueber-uns">Über uns</a></li>
+        <li><a href="#bewertungen">Referenzen</a></li>
+        <li><a href="#kontakt" class="nav__cta">Termin anfragen</a></li>
+      </ul>
+      <button class="nav__burger" id="burger" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#leistungen" class="mobile-link">Leistungen</a></li>
+      <li><a href="#showcase" class="mobile-link">Arbeiten</a></li>
+      <li><a href="#ueber-uns" class="mobile-link">Über uns</a></li>
+      <li><a href="#bewertungen" class="mobile-link">Referenzen</a></li>
+      <li><a href="#kontakt" class="mobile-link">Kontakt</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <img src="mercedes.png" alt="Premium Fahrzeugaufbereitung" class="hero__img" />
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="hero__content">
+      <p class="hero__eyebrow reveal">München · Präzision seit 2015</p>
+      <h1 class="hero__headline reveal">
+        Premium<br />
+        <em>Fahrzeugaufbereitung</em><br />
+        auf höchstem Niveau.
+      </h1>
+      <p class="hero__sub reveal">
+        Lackpflege, Keramikversiegelung und professionelles Detailing —<br class="br-desk" />
+        für Fahrzeuge, die perfekt sein sollen.
+      </p>
+      <div class="hero__actions reveal">
+        <a href="#kontakt" class="btn btn--primary">Termin anfragen</a>
+        <a href="#leistungen" class="btn btn--ghost">Leistungen ansehen</a>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <span class="hero__scroll-line"></span>
+      <span class="hero__scroll-label">Scroll</span>
+    </div>
+    <div class="hero__badge">
+      <span class="hero__badge-num">500+</span>
+      <span class="hero__badge-text">Aufbereitungen<br />pro Jahr</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       LEISTUNGEN
+  ═══════════════════════════════════════ -->
+  <section class="services" id="leistungen">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Was wir bieten</p>
+        <h2 class="section-title">Unsere Leistungen</h2>
+        <p class="section-desc">Jede Aufbereitung ist ein Einzelstück — ausgeführt mit Premium-Produkten und kompromisslosem Anspruch.</p>
+      </div>
+
+      <div class="services__grid">
+        <div class="service-card reveal">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 28C8 28 10 20 20 20C30 20 32 28 32 28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M12 28V32H28V28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="20" cy="14" r="4" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M16 8L20 4L24 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Innenreinigung</h3>
+          <p class="service-card__desc">Tiefenreinigung von Polstern, Teppichen und Verkleidungen. Makellose Ergebnisse durch professionelle Extraktion.</p>
+          <span class="service-card__arrow">→</span>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="10" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M20 10V8M20 32V30M10 20H8M32 20H30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M13 13L11.5 11.5M28.5 28.5L27 27M27 13L28.5 11.5M11.5 28.5L13 27" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="20" cy="20" r="3" fill="currentColor" opacity="0.4"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Lackpolitur</h3>
+          <p class="service-card__desc">Korrektur von Kratzern, Hologrammeffekten und Oxidation. Ihr Lack erstrahlt in ursprünglichem Glanz.</p>
+          <span class="service-card__arrow">→</span>
+        </div>
+
+        <div class="service-card reveal service-card--featured">
+          <div class="service-card__badge">Premium</div>
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 6L22.5 13H30L24 17.5L26.5 24.5L20 20L13.5 24.5L16 17.5L10 13H17.5L20 6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Keramikversiegelung</h3>
+          <p class="service-card__desc">Langzeitschutz durch professionelle Nano-Keramikbeschichtung. Hydrophober Effekt und brillanter Glanz für Jahre.</p>
+          <span class="service-card__arrow">→</span>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="22" r="10" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="20" cy="22" r="4" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M20 12V8M12 16L9 13M28 16L31 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M14 30L11 33M26 30L29 33" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Felgenreinigung</h3>
+          <p class="service-card__desc">Entfernung von Bremsstaub und Verschmutzungen. Felgenpflege und optionaler Keramikschutz für anhaltenden Glanz.</p>
+          <span class="service-card__arrow">→</span>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 26L12 16H28L32 26H8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M8 26V30H32V26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M14 16L13 10H27L26 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="13" cy="30" r="2" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="27" cy="30" r="2" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Fahrzeugpflege</h3>
+          <p class="service-card__desc">Komplettaufbereitung innen und außen. Werterhalt durch regelmäßige Profipflege — für den perfekten Gesamteindruck.</p>
+          <span class="service-card__arrow">→</span>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 8L34 16V24L20 32L6 24V16L20 8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M20 8V32M6 16L34 16M6 24L34 24" stroke="currentColor" stroke-width="1" opacity="0.4" stroke-dasharray="2 2"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Premium Detailing</h3>
+          <p class="service-card__desc">Das Komplettpaket — Lackkorrektur, Versiegelung, Innen- und Außenaufbereitung. Für höchste Ansprüche.</p>
+          <span class="service-card__arrow">→</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SHOWCASE
+  ═══════════════════════════════════════ -->
+  <section class="showcase" id="showcase">
+    <div class="showcase__header reveal">
+      <p class="section-eyebrow">Unsere Arbeiten</p>
+      <h2 class="section-title">Ergebnisse,<br /><em>die überzeugen.</em></h2>
+    </div>
+
+    <div class="showcase__grid">
+      <div class="showcase__item showcase__item--large reveal">
+        <div class="showcase__img-wrap">
+          <img src="lamborghini.png" alt="Lamborghini Detailing" loading="lazy" />
+          <div class="showcase__overlay">
+            <span class="showcase__label">Lackkorrektur &amp; Keramikversiegelung</span>
+          </div>
+        </div>
+      </div>
+      <div class="showcase__item reveal">
+        <div class="showcase__img-wrap">
+          <img src="mercedes.png" alt="Mercedes Aufbereitung" loading="lazy" />
+          <div class="showcase__overlay">
+            <span class="showcase__label">Premium Detailing</span>
+          </div>
+        </div>
+      </div>
+      <div class="showcase__item reveal">
+        <div class="showcase__img-wrap">
+          <img src="vw.png" alt="VW Fahrzeugpflege" loading="lazy" />
+          <div class="showcase__overlay">
+            <span class="showcase__label">Vollaufbereitung</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="showcase__stats reveal">
+      <div class="stat">
+        <span class="stat__num">500<sup>+</sup></span>
+        <span class="stat__label">Fahrzeuge pro Jahr</span>
+      </div>
+      <div class="stat__divider"></div>
+      <div class="stat">
+        <span class="stat__num">10</span>
+        <span class="stat__label">Jahre Erfahrung</span>
+      </div>
+      <div class="stat__divider"></div>
+      <div class="stat">
+        <span class="stat__num">100<sup>%</sup></span>
+        <span class="stat__label">Kundenzufriedenheit</span>
+      </div>
+      <div class="stat__divider"></div>
+      <div class="stat">
+        <span class="stat__num">15<sup>+</sup></span>
+        <span class="stat__label">Premium-Marken</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       WARUM WIR
+  ═══════════════════════════════════════ -->
+  <section class="why" id="ueber-uns">
+    <div class="container">
+      <div class="why__inner">
+        <div class="why__left reveal">
+          <p class="section-eyebrow">Unser Anspruch</p>
+          <h2 class="section-title">Warum<br /><em>APEX?</em></h2>
+          <p class="why__body">
+            Wir verstehen Fahrzeuge als Investition und Ausdruck von Persönlichkeit. Deshalb behandeln wir jedes Fahrzeug mit der Sorgfalt, die es verdient — keine Kompromisse, kein Mittelmaß.
+          </p>
+          <a href="#kontakt" class="btn btn--primary">Jetzt anfragen</a>
+        </div>
+
+        <div class="why__right">
+          <div class="why-item reveal">
+            <div class="why-item__num">01</div>
+            <div class="why-item__content">
+              <h4>Premium-Produkte</h4>
+              <p>Ausschließlich zertifizierte Profi-Produkte namhafter Hersteller — für Ergebnisse, die man sieht und fühlt.</p>
+            </div>
+          </div>
+          <div class="why-item reveal">
+            <div class="why-item__num">02</div>
+            <div class="why-item__content">
+              <h4>Liebe zum Detail</h4>
+              <p>Jede Aufbereitung wird mit größter Sorgfalt durchgeführt. Nichts wird dem Zufall überlassen.</p>
+            </div>
+          </div>
+          <div class="why-item reveal">
+            <div class="why-item__num">03</div>
+            <div class="why-item__content">
+              <h4>Moderne Techniken</h4>
+              <p>Nano-Beschichtungen, Maschinenpolishing und modernste Geräte für professionelle Ergebnisse.</p>
+            </div>
+          </div>
+          <div class="why-item reveal">
+            <div class="why-item__num">04</div>
+            <div class="why-item__content">
+              <h4>Schutz &amp; Werterhalt</h4>
+              <p>Unsere Versiegelungen schützen Ihren Lack langfristig — und erhalten den Wert Ihres Fahrzeugs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       BEWERTUNGEN
+  ═══════════════════════════════════════ -->
+  <section class="reviews" id="bewertungen">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Kundenstimmen</p>
+        <h2 class="section-title">Was unsere Kunden sagen.</h2>
+      </div>
+
+      <div class="reviews__grid">
+        <div class="review-card reveal">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">„Mein Porsche sieht aus wie frisch aus dem Showroom. Die Keramikversiegelung ist absolut beeindruckend — Wasser perlt förmlich ab. Klare Empfehlung."</p>
+          <div class="review-card__author">
+            <div class="review-card__avatar">MK</div>
+            <div>
+              <span class="review-card__name">Markus K.</span>
+              <span class="review-card__car">Porsche 911 · Premium Detailing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card reveal">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">„Unfassbar professionell. Nach der Lackkorrektur war mein Mercedes wieder makellos. Tiefe Kratzer verschwunden, der Glanz ist überragend. Absolut empfehlenswert."</p>
+          <div class="review-card__author">
+            <div class="review-card__avatar">SL</div>
+            <div>
+              <span class="review-card__name">Sandra L.</span>
+              <span class="review-card__car">Mercedes AMG · Lackkorrektur</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card reveal">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">„Das Team von APEX hat meinen Lamborghini komplett aufbereitet. Ergebnis: spektakulär. Man merkt sofort, dass hier echte Profis am Werk waren. Danke!"</p>
+          <div class="review-card__author">
+            <div class="review-card__avatar">TB</div>
+            <div>
+              <span class="review-card__name">Thomas B.</span>
+              <span class="review-card__car">Lamborghini Huracán · Vollaufbereitung</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       GALERIE
+  ═══════════════════════════════════════ -->
+  <section class="gallery" id="galerie">
+    <div class="gallery__header reveal">
+      <p class="section-eyebrow">Galerie</p>
+      <h2 class="section-title">Jedes Fahrzeug.<br /><em>Perfekt aufbereitet.</em></h2>
+    </div>
+    <div class="gallery__strip">
+      <div class="gallery__item reveal">
+        <img src="mercedes.png" alt="Mercedes" loading="lazy" />
+      </div>
+      <div class="gallery__item reveal">
+        <img src="lamborghini.png" alt="Lamborghini" loading="lazy" />
+      </div>
+      <div class="gallery__item reveal">
+        <img src="vw.png" alt="VW" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       KONTAKT
+  ═══════════════════════════════════════ -->
+  <section class="contact" id="kontakt">
+    <div class="container">
+      <div class="contact__inner">
+        <div class="contact__info reveal">
+          <p class="section-eyebrow">Kontakt aufnehmen</p>
+          <h2 class="section-title">Bereit für<br /><em>Ihr Fahrzeug?</em></h2>
+          <p class="contact__body">Vereinbaren Sie jetzt Ihren persönlichen Termin. Wir freuen uns auf Ihre Anfrage.</p>
+
+          <div class="contact__details">
+            <a href="tel:+4989123456789" class="contact__link">
+              <div class="contact__link-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 9.11a19.79 19.79 0 01-3.07-8.67A2 2 0 012.81 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l.97-.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                </svg>
+              </div>
+              <div>
+                <span class="contact__link-label">Telefon</span>
+                <span class="contact__link-val">+49 89 123 456 789</span>
+              </div>
+            </a>
+
+            <a href="https://wa.me/4989123456789" class="contact__link">
+              <div class="contact__link-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+                </svg>
+              </div>
+              <div>
+                <span class="contact__link-label">WhatsApp</span>
+                <span class="contact__link-val">Direkt schreiben</span>
+              </div>
+            </a>
+
+            <div class="contact__link contact__link--static">
+              <div class="contact__link-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div>
+                <span class="contact__link-label">Standort</span>
+                <span class="contact__link-val">Maximilianstr. 12, München</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact__form-wrap reveal">
+          <form class="contact__form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Ihr Name" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Telefon</label>
+                <input type="tel" id="phone" name="phone" placeholder="+49 ..." />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">E-Mail</label>
+              <input type="email" id="email" name="email" placeholder="ihre@email.de" required />
+            </div>
+            <div class="form-group">
+              <label for="service">Gewünschte Leistung</label>
+              <select id="service" name="service">
+                <option value="" disabled selected>Leistung wählen …</option>
+                <option>Innenreinigung</option>
+                <option>Lackpolitur</option>
+                <option>Keramikversiegelung</option>
+                <option>Felgenreinigung</option>
+                <option>Fahrzeugpflege</option>
+                <option>Premium Detailing</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Nachricht</label>
+              <textarea id="message" name="message" rows="4" placeholder="Fahrzeugmodell, Zustand, besondere Wünsche …"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">
+              <span>Anfrage senden</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <p class="form-success" id="formSuccess">✓ Ihre Anfrage wurde übermittelt. Wir melden uns innerhalb von 24 Stunden.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <span class="nav__logo-mark">APEX</span>
+            <span class="nav__logo-sub">DETAIL STUDIO</span>
+          </div>
+          <p class="footer__tagline">Premium Fahrzeugaufbereitung.<br />München.</p>
+        </div>
+        <div class="footer__links">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="#leistungen">Leistungen</a></li>
+            <li><a href="#showcase">Arbeiten</a></li>
+            <li><a href="#ueber-uns">Über uns</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer__contact">
+          <h5>Kontakt</h5>
+          <p>Maximilianstr. 12<br />80539 München</p>
+          <p><a href="tel:+4989123456789">+49 89 123 456 789</a></p>
+          <p><a href="mailto:info@apexdetail.de">info@apexdetail.de</a></p>
+        </div>
+        <div class="footer__hours">
+          <h5>Öffnungszeiten</h5>
+          <p>Mo – Fr: 8:00 – 18:00 Uhr</p>
+          <p>Sa: 9:00 – 14:00 Uhr</p>
+          <p>So: Geschlossen</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 APEX Detail Studio. Alle Rechte vorbehalten.</p>
+        <div class="footer__legal">
+          <a href="#">Impressum</a>
+          <a href="#">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
