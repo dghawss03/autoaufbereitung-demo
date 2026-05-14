@@ -796,11 +796,22 @@ input, textarea, select { font-family: inherit; }
 .gallery__strip {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
   gap: 16px;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 40px;
 }
+
+/* 4. + 5. Bild: breiter, damit 2 Bilder die zweite Reihe füllen */
+.gallery__item:nth-child(4),
+.gallery__item:nth-child(5) {
+  grid-column: span 1;
+}
+/* Zweite Reihe 2-spaltiger Trick: 4. bekommt 1.5fr-Anteil visuell
+   über ein 2-col-Wrapper — wir lösen das clean per auto-placement */
+.gallery__item:nth-child(4) { grid-column: 1 / 2; }
+.gallery__item:nth-child(5) { grid-column: 2 / 4; }
 
 .gallery__item {
   overflow: hidden;
@@ -1158,10 +1169,111 @@ input, textarea, select { font-family: inherit; }
   .section-header { margin-bottom: 48px; }
 
   .gallery__strip { gap: 12px; }
+  /* Mobile: alle 5 Galeriebilder einspaltig */
+  .gallery__item:nth-child(4),
+  .gallery__item:nth-child(5) { grid-column: 1 / -1; }
   .showcase__grid { gap: 12px; }
+
+  /* Legal Sections mobile */
+  .legal-section__inner { grid-template-columns: 1fr; gap: 32px; }
+  .legal-section { padding: 64px 0; }
 }
 
 @media (max-width: 480px) {
   .hero__headline { font-size: 44px; }
   .section-title { font-size: 36px; }
+}
+
+/* ═══════════════════════════════════════════════════
+   LEGAL SECTIONS — Impressum & Datenschutz
+═══════════════════════════════════════════════════ */
+.legal-section {
+  padding: 100px 0;
+  background: var(--dark);
+  border-top: 1px solid var(--border);
+}
+
+.legal-section--alt {
+  background: var(--black);
+}
+
+.legal-section__inner {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.legal-section__header {
+  position: sticky;
+  top: calc(var(--nav-h) + 24px);
+}
+
+.legal-section__title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.15;
+  margin-top: 12px;
+}
+
+.legal-section__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.legal-block {
+  padding: 36px 32px;
+  border-bottom: 1px solid var(--border);
+  transition: background var(--transition-fast);
+}
+.legal-block:nth-child(odd) {
+  border-right: 1px solid var(--border);
+}
+.legal-block:nth-last-child(-n+2) {
+  border-bottom: none;
+}
+.legal-block:hover {
+  background: var(--anthracite);
+}
+
+.legal-block h4 {
+  font-family: var(--font-condensed);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.legal-block p {
+  font-size: 14px;
+  color: var(--silver);
+  line-height: 1.85;
+}
+
+.legal-block a {
+  color: var(--accent);
+  transition: color var(--transition-fast);
+}
+.legal-block a:hover {
+  color: var(--white);
+}
+
+/* Responsive: Legal */
+@media (max-width: 1024px) {
+  .legal-section__inner { grid-template-columns: 1fr; gap: 40px; }
+  .legal-section__header { position: static; }
+}
+@media (max-width: 640px) {
+  .legal-section__content { grid-template-columns: 1fr; }
+  .legal-block:nth-child(odd) { border-right: none; }
+  .legal-block:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+  .legal-block:last-child { border-bottom: none; }
 }

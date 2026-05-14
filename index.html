@@ -351,6 +351,12 @@
       <div class="gallery__item reveal">
         <img src="vw.png" alt="VW" loading="lazy" />
       </div>
+      <div class="gallery__item reveal">
+        <img src="bmwdrei.png" alt="BMW 3er" loading="lazy" />
+      </div>
+      <div class="gallery__item reveal">
+        <img src="lederauto.png" alt="Leder-Innenraum Detailing" loading="lazy" />
+      </div>
     </div>
   </section>
 
@@ -406,7 +412,7 @@
         </div>
 
         <div class="contact__form-wrap reveal">
-          <form class="contact__form" id="contactForm">
+          <form class="contact__form" id="contactForm" action="https://formspree.io/f/maqvzvag" method="POST">
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Name</label>
@@ -431,6 +437,7 @@
                 <option>Felgenreinigung</option>
                 <option>Fahrzeugpflege</option>
                 <option>Premium Detailing</option>
+                <option>Sonstiges</option>
               </select>
             </div>
             <div class="form-group">
@@ -486,12 +493,76 @@
       <div class="footer__bottom">
         <p>© 2026 APEX Detail Studio. Alle Rechte vorbehalten.</p>
         <div class="footer__legal">
-          <a href="#">Impressum</a>
-          <a href="#">Datenschutz</a>
+          <a href="#impressum">Impressum</a>
+          <a href="#datenschutz">Datenschutz</a>
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- ═══════════════════════════════════════
+       IMPRESSUM
+  ═══════════════════════════════════════ -->
+  <section class="legal-section" id="impressum">
+    <div class="container">
+      <div class="legal-section__inner">
+        <div class="legal-section__header">
+          <p class="section-eyebrow">Rechtliches</p>
+          <h2 class="legal-section__title">Impressum</h2>
+        </div>
+        <div class="legal-section__content">
+          <div class="legal-block">
+            <h4>Angaben gemäß § 5 TMG</h4>
+            <p>APEX Detail Studio<br />Maximilianstr. 12<br />80539 München</p>
+          </div>
+          <div class="legal-block">
+            <h4>Kontakt</h4>
+            <p>Telefon: +49 89 123 456 789<br />E-Mail: <a href="mailto:info@apexdetail.de">info@apexdetail.de</a></p>
+          </div>
+          <div class="legal-block">
+            <h4>Verantwortlich für den Inhalt</h4>
+            <p>Max Mustermann<br />APEX Detail Studio<br />Maximilianstr. 12, 80539 München</p>
+          </div>
+          <div class="legal-block">
+            <h4>Hinweis</h4>
+            <p>Dies ist eine Demo-Website. Alle Angaben sind fiktiv und dienen ausschließlich zu Demonstrationszwecken.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       DATENSCHUTZ
+  ═══════════════════════════════════════ -->
+  <section class="legal-section legal-section--alt" id="datenschutz">
+    <div class="container">
+      <div class="legal-section__inner">
+        <div class="legal-section__header">
+          <p class="section-eyebrow">Rechtliches</p>
+          <h2 class="legal-section__title">Datenschutz&shy;erklärung</h2>
+        </div>
+        <div class="legal-section__content">
+          <div class="legal-block">
+            <h4>Hinweis zur Demo-Website</h4>
+            <p>Diese Website ist eine Demo-Website und dient ausschließlich zu Demonstrationszwecken. Es werden keine personenbezogenen Daten dauerhaft gespeichert.</p>
+          </div>
+          <div class="legal-block">
+            <h4>Kontaktformular</h4>
+            <p>Über das Kontaktformular eingegebene Daten (Name, E-Mail, Telefon, Nachricht) werden ausschließlich zur Bearbeitung Ihrer Anfrage verarbeitet. Die Daten werden nicht an Dritte weitergegeben und nach Abschluss der Anfrage gelöscht.</p>
+          </div>
+          <div class="legal-block">
+            <h4>Ihre Rechte</h4>
+            <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer personenbezogenen Daten. Bei Fragen wenden Sie sich an: <a href="mailto:info@apexdetail.de">info@apexdetail.de</a></p>
+          </div>
+          <div class="legal-block">
+            <h4>Verantwortliche Stelle</h4>
+            <p>APEX Detail Studio · Maximilianstr. 12 · 80539 München</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <script src="script.js"></script>
 </body>

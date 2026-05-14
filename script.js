@@ -117,14 +117,14 @@ function initSmoothScroll() {
 }
 
 /* ═══════════════════════════════════════════════════
-   CONTACT FORM — minimal UX
+   CONTACT FORM — Formspree integration
 ═══════════════════════════════════════════════════ */
 function initForm() {
   const form    = document.getElementById('contactForm');
   const success = document.getElementById('formSuccess');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const btn  = form.querySelector('button[type="submit"]');
@@ -132,30 +132,43 @@ function initForm() {
     const orig = span.textContent;
 
     // Loading state
-    btn.disabled   = true;
+    btn.disabled     = true;
     span.textContent = 'Wird gesendet …';
 
-    // Simulate async send (replace with real fetch in production)
-    setTimeout(() => {
+    try {
+      const data     = new FormData(form);
+      const response = await fetch(form.action, {
+        method:  'POST',
+        body:    data,
+        headers: { Accept: 'application/json' },
+      });
+
+      if (response.ok) {
+        form.reset();
+        if (success) {
+          success.classList.add('show');
+          setTimeout(() => success.classList.remove('show'), 7000);
+        }
+      } else {
+        // Formspree may return validation errors
+        const json = await response.json().catch(() => ({}));
+        const msg  = json?.errors?.map(err => err.message).join(', ') ||
+                     'Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.';
+        alert(msg);
+      }
+    } catch (_err) {
+      alert('Verbindungsfehler. Bitte prüfen Sie Ihre Internetverbindung.');
+    } finally {
       btn.disabled     = false;
       span.textContent = orig;
-      form.reset();
-      if (success) {
-        success.classList.add('show');
-        setTimeout(() => success.classList.remove('show'), 6000);
-      }
-    }, 1400);
+    }
   });
 
-  // Live float-label feel — subtle border accent on focus
+  // Focus ring feel — subtle border accent on focus
   const inputs = form.querySelectorAll('input, textarea, select');
   inputs.forEach(input => {
-    input.addEventListener('focus', () => {
-      input.parentElement.classList.add('focused');
-    });
-    input.addEventListener('blur', () => {
-      input.parentElement.classList.remove('focused');
-    });
+    input.addEventListener('focus', () => input.parentElement.classList.add('focused'));
+    input.addEventListener('blur',  () => input.parentElement.classList.remove('focused'));
   });
 }
 
