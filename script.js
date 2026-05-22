@@ -6,7 +6,7 @@
 
 /* ── DOM Ready ── */
 document.addEventListener('DOMContentLoaded', () => {
-  initNav();
+  initNav(); 
   initReveal();
   initHero();
   initMobileMenu();
