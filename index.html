@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
-<head> 
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>APEX DETAIL STUDIO — Premium Fahrzeugaufbereitung</title>
@@ -12,12 +12,65 @@
 <body>
 
   <!-- ═══════════════════════════════════════
-       DEMO RIBBON
+       DEMO RIBBON — GitHub Pages safe
+       Inline styles garantieren korrekte Darstellung
+       unabhängig von CSS-Ladereihenfolge oder Overrides
   ═══════════════════════════════════════ -->
-  <div class="demo-ribbon" id="demoRibbon" title="Dies ist ein Demo-Projekt">
-    <div class="demo-ribbon__inner">
-      <span class="demo-ribbon__main">DEMO PROJEKT</span>
-      <span class="demo-ribbon__sub">Showcase Website</span>
+  <div id="demoRibbon" style="
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    z-index: 99999 !important;
+    pointer-events: none;
+    display: block !important;
+  ">
+    <div id="demoRibbonInner" style="
+      position: absolute;
+      top: 28px;
+      right: -46px;
+      width: 190px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      padding: 11px 0;
+      transform: rotate(45deg);
+      transform-origin: center center;
+      background: #ffffff;
+      border-top: 1px solid #e0e0e0;
+      border-bottom: 1px solid #cccccc;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.9) inset;
+      pointer-events: all;
+      cursor: default;
+      transition: box-shadow 0.3s ease, background 0.3s ease;
+    ">
+      <span style="
+        font-family: 'Barlow Condensed', Arial Narrow, Arial, sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #0a0a0a;
+        white-space: nowrap;
+        line-height: 1;
+        text-shadow: none;
+        display: block;
+      ">DEMO PROJEKT</span>
+      <span style="
+        font-family: 'Barlow Condensed', Arial Narrow, Arial, sans-serif;
+        font-size: 8.5px;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #555555;
+        white-space: nowrap;
+        line-height: 1;
+        display: block;
+      ">Showcase Website</span>
     </div>
   </div>
 
